@@ -9,7 +9,7 @@ During the development of this program it became apparent that I had no use for 
 *.lnk* files can contain a number of optional data items that are not implemented in getLNKinfo.exe. You may add them yourself at your own leisure.
 
 The full documentation of the Microsoft Shell Link format can be found here:
-[MS-SHLLNK](https://docs.microsoft.com/de-de/openspecs/windows_protocols/ms-shllink)
+[MS-SHLLINK](https://docs.microsoft.com/de-de/openspecs/windows_protocols/ms-shllink)
 
 ## How to use the compiled program:
 Please call the program with the following arguments:
