@@ -1,12 +1,12 @@
 # getLNKinfo
 Command line utility for extracting information from **Microsoft Shell Link** (*.lnk*) files
 
-This project is a small **.exe** utility for Windows to extract various information contained in Microsoft's Shell Link (*.lnk*) format.
+This project is a small *.exe* utility for Windows to extract various information contained in Microsoft's Shell Link (*.lnk*) format.
 
 The project is built with Microsoft Visual Studio 64 bit via CMake and uses C++14.
 
 During the development of this program it became apparent that I had no use for it after all; so continued development is not to be expected. In particular
-*.lnk* files can contain a number of optional data items that are not implemented in getLNKinfo.exe. You may add them yourself at your own leisure.
+*.lnk* files can contain a number of optional data items that are not implemented in *getLNKinfo.exe*. You may add them yourself at your own leisure.
 
 The full documentation of the Microsoft Shell Link format can be found here:
 [MS-SHLLINK](https://docs.microsoft.com/de-de/openspecs/windows_protocols/ms-shllink)
