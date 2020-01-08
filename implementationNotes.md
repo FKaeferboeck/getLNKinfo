@@ -27,7 +27,7 @@ const wchar_t* example = L"Lemmy “Motörhead” Kilmister";
 UINT codepage = GetConsoleOutputCP();
 int bufferSize = WideCharToMultiByte(codepage, 0, example, -1, NULL, 0, NULL, NULL); // measure string length after conversion
 auto buf = std::unique_ptr<char[]>(new char[bufferSize]);
-WideCharToMultiByte(codepage, 0, s, -1, buf.get(), bufferSize, NULL, NULL); // convert string to current console codepage
+WideCharToMultiByte(codepage, 0, example, -1, buf.get(), bufferSize, NULL, NULL); // convert string to current console codepage
 
 HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 DWORD n = 0;
