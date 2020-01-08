@@ -105,11 +105,16 @@ LNK::LNK(const char* begin, const char* end) {
 
 void print(const wchar_t* s, HANDLE hConsole) {
 	DWORD n = 0;
-	WriteConsoleW(hConsole, s, static_cast<DWORD>(std::wcslen(s)), &n, NULL);
+	UINT codepage = GetConsoleOutputCP();
+	int bufferSize = WideCharToMultiByte(codepage, 0, s, -1, NULL, 0, NULL, NULL);
+	auto buf = std::unique_ptr<char[]>(new char[bufferSize]);
+	WideCharToMultiByte(codepage, 0, s, -1, buf.get(), bufferSize, NULL, NULL);
+	WriteFile(hConsole, buf.get(), bufferSize - 1, &n, NULL);
 }
+
 void print(const char* s, HANDLE hConsole) {
 	DWORD n = 0;
-	WriteConsoleA(hConsole, s, static_cast<DWORD>(std::strlen(s)), &n, NULL);
+	WriteFile(hConsole, s, static_cast<DWORD>(std::strlen(s)), &n, NULL);
 }
 
 
