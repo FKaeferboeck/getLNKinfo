@@ -13,7 +13,7 @@ The Windows API provides the function `WriteConsoleW`, which takes a wide string
 But there is a problem:
 *getLNKinfo.exe* will often be used with **redirected output**, for example in a batch file to store its output into a variable:
 
-    FOR /F "tokens=\*" %%i IN ('getLNKinfo.exe /F exampleLinkFile.lnk') DO SET var=%%i
+    FOR /F "tokens=*" %%i IN ('getLNKinfo.exe /F exampleLinkFile.lnk') DO SET var=%%i
 
 (This command temporarily redirects its output away from the console.)
 
